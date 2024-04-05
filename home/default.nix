@@ -1,5 +1,6 @@
 { config, pkgs, inputs, ... }:
 
+
 {
   imports = [
     inputs.hyprlock.homeManagerModules.hyprlock
@@ -13,6 +14,12 @@
     neofetch
     kitty
     btop
+    wofi
+    waybar
+    mako
+    inputs.hyprlock
+    inputs.hypridle
+    wlogout
   ];
 
   programs.hyprlock.enable = true;
