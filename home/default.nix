@@ -18,7 +18,6 @@
     waybar
     mako
     inputs.hyprlock
-    inputs.hypridle
     wlogout
   ];
 
