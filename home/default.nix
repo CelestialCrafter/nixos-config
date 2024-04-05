@@ -11,28 +11,8 @@
 
   home.packages = with pkgs; [
     neofetch
-
-    zip
-    unzip
-
-    ripgrep
-    jq
-    fzf
-    zoxide
-    tldr
-    fd
-    eza
-    bat
-    which
-    aria2
-
-    neovim
     kitty
-
     btop
-
-    pciutils
-    usbutils    
   ];
 
   programs.hyprlock.enable = true;
