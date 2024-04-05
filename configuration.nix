@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, lib, ... }:
 
 {
   imports =
@@ -98,6 +98,18 @@
   programs.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+  };
+  services.greetd = let
+    session = {
+      command = "${config.programs.hyprland.package}/bin/Hyprland";
+      user = "celestial";
+    };
+  in {
+    enable = true;
+    settings = {
+      default_session = session;
+      initial_session = session;
+    };
   };
   services.flatpak.enable = true;
   security.rtkit.enable = true;
