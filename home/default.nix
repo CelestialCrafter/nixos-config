@@ -37,6 +37,19 @@
         location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
       }
     ];
+    packages = [
+      "org.mozilla.firefox"
+      "com.discordapp.Discord"
+      "com.spotify.Client"
+      "org.videolan.VLC"
+      "org.gimp.GIMP"
+      "org.kde.krita"
+      "org.blender.Blender"
+      "com.obsproject.Studio"
+      "com.visualstudio.code"
+      "io.github.flattool.Warehouse"
+      "com.github.tchx84.Flatseal"
+    ];
   };
 
   home.stateVersion = "23.11";
