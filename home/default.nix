@@ -21,6 +21,19 @@
     wlogout
   ];
 
+  gtk = {
+    enable = true;
+    theme = {
+      package = pkgs.gnome.gnome-themes-extra;
+      name = "Adwaita-dark";
+    };
+  };
+
+  sessionVariables = {
+    EDITOR = "com.visualstudio.code";
+    BROWSER = "org.mozilla.firefox";
+  };
+
   programs.hyprlock.enable = true;
 
   programs.bash = {
