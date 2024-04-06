@@ -30,7 +30,42 @@
     in {
       "neofetch/" = {
         source = dotfiles + "/neofetch";
-        recursive = true; 
+        recursive = true;
+      };
+
+      "btop/" = {
+        source = dotfiles + "/btop";
+        recursive = true;
+      };
+
+      "hypr/" = {
+        source = dotfiles + "/hypr";
+        recursive = true;
+      };
+
+      "kitty/" = {
+        source = dotfiles + "/kitty";
+        recursive = true;
+      };
+
+      "mako/" = {
+        source = dotfiles + "/mako";
+        recursive = true;
+      };
+
+      "waybar/" = {
+        source = dotfiles + "/waybar";
+        recursive = true;
+      };
+
+      "wofi/" = {
+        source = dotfiles + "/wofi";
+        recursive = true;
+      };
+
+      "wlogout/" = {
+        source = dotfiles + "/wlogout";
+        recursive = true;
       };
     };
 
