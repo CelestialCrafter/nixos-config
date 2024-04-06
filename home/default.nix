@@ -7,19 +7,26 @@
     inputs.nix-flatpak.homeManagerModules.nix-flatpak
   ];
 
-  home.username = "celestial";
-  home.homeDirectory = "/home/celestial";
+  home = {
+    username = "celestial";
+    homeDirectory = "/home/celestial";
 
-  home.packages = with pkgs; [
-    neofetch
-    kitty
-    btop
-    wofi
-    waybar
-    mako
-    inputs.hyprlock
-    wlogout
-  ];
+    packages = with pkgs; [
+      neofetch
+      kitty
+      btop
+      wofi
+      waybar
+      mako
+      inputs.hyprlock
+      wlogout
+    ];
+
+    sessionVariables = {
+      BROWSER = "org.mozilla.firefox";
+      EDITOR = "com.visualstudio.code";
+    };
+  };
 
   gtk = {
     enable = true;
@@ -27,11 +34,6 @@
       package = pkgs.gnome.gnome-themes-extra;
       name = "Adwaita-dark";
     };
-  };
-
-  sessionVariables = {
-    EDITOR = "com.visualstudio.code";
-    BROWSER = "org.mozilla.firefox";
   };
 
   programs.hyprlock.enable = true;
