@@ -22,6 +22,18 @@
       wlogout
     ];
 
+    file = let
+      dotfiles = builtins.fetchGit {
+        url = "https://github.com/CelestialCrafter/dotfiles";
+        ref = "master";
+      };
+    in {
+      "neofetch/" = {
+        source = dotfiles + "/neofetch";
+        recursive = true; 
+      };
+    };
+
     sessionVariables = {
       BROWSER = "org.mozilla.firefox";
       EDITOR = "com.visualstudio.code";

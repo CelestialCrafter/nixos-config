@@ -66,7 +66,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     hyprland-protocols
-    xdg-util
+    xdg-utils
 
     cachix
     wget
