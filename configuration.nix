@@ -77,6 +77,7 @@
     aria2
     vim
     git
+    gh
 
     zip
     unzip
