@@ -1,6 +1,5 @@
 { config, pkgs, inputs, ... }:
 
-
 {
   imports = [
     inputs.hyprlock.homeManagerModules.hyprlock
@@ -12,59 +11,59 @@
     homeDirectory = "/home/celestial";
 
     packages = with pkgs; [
+      inputs.hyprlock
       neofetch
       kitty
       btop
       wofi
       waybar
       mako
-      inputs.hyprlock
       wlogout
+      grim
+      slurp
     ];
 
     file = let
-      dotfiles = builtins.fetchGit {
-        url = "https://github.com/CelestialCrafter/dotfiles";
-        ref = "master";
-      };
+      dotfiles = builtins.fetchGit "/home/celestial/dotfiles";
+      configPath = ".config";
     in {
-      "neofetch/" = {
-        source = dotfiles + "/neofetch";
+      "${configPath}/neofetch/" = {
+        source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/neofetch";
         recursive = true;
       };
 
-      "btop/" = {
-        source = dotfiles + "/btop";
+      "${configPath}/btop/" = {
+        source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/btop";
         recursive = true;
       };
 
-      "hypr/" = {
-        source = dotfiles + "/hypr";
+      "${configPath}/hypr/" = {
+        source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/hypr";
         recursive = true;
       };
 
-      "kitty/" = {
-        source = dotfiles + "/kitty";
+      "${configPath}/kitty/" = {
+        source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/kitty";
         recursive = true;
       };
 
-      "mako/" = {
-        source = dotfiles + "/mako";
+      "${configPath}/mako/" = {
+        source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/mako";
         recursive = true;
       };
 
-      "waybar/" = {
-        source = dotfiles + "/waybar";
+      "${configPath}/waybar/" = {
+        source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/waybar";
         recursive = true;
       };
 
-      "wofi/" = {
-        source = dotfiles + "/wofi";
+      "${configPath}/wofi/" = {
+        source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/wofi";
         recursive = true;
       };
 
-      "wlogout/" = {
-        source = dotfiles + "/wlogout";
+      "${configPath}/wlogout/" = {
+        source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/wlogout";
         recursive = true;
       };
     };

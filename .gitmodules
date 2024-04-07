@@ -1,0 +1,3 @@
+[submodule "home/dotfiles"]
+	path = home/dotfiles
+	url = https://github.com/CelestialCrafter/dotfiles
