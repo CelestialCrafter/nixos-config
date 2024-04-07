@@ -21,6 +21,7 @@
       wlogout
       grim
       slurp
+      swww
     ];
 
     file = let
