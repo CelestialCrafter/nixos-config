@@ -1,5 +1,5 @@
 {
-  description = "NixOS configuration";
+  description = "Celestial's NixOS Configuration";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -15,15 +15,8 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-          ./configuration.nix
+          ./modules
           home-manager.nixosModules.home-manager
-          {
-            home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.users.celestial = import ./home;
-
-            # Optionally, use home-manager.extraSpecialArgs to pass
-            # arguments to home.nix
-          }
         ];
       };
     };
