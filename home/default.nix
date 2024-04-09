@@ -22,6 +22,12 @@
       grim
       slurp
       swww
+      libnotify
+      playerctl
+
+      noto-fonts
+      noto-fonts-color-emoji
+      font-awesome
     ];
 
     file = let
@@ -60,7 +66,7 @@
 
       "${configPath}/wofi/" = {
         source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/wofi";
-        recursive = true;
+       recursive = true;
       };
 
       "${configPath}/wlogout/" = {
@@ -72,8 +78,11 @@
     sessionVariables = {
       BROWSER = "org.mozilla.firefox";
       EDITOR = "com.visualstudio.code";
+      CURRENT_VOLUME_MAX = 1.5;
     };
   };
+
+  fonts.fontconfig.enable = true;
 
   gtk = {
     enable = true;
@@ -101,7 +110,7 @@
     ];
     packages = [
       "org.mozilla.firefox"
-      "com.discordapp.Discord"
+      "dev.vencord.Vesktop"
       "com.spotify.Client"
       "org.videolan.VLC"
       "org.gimp.GIMP"

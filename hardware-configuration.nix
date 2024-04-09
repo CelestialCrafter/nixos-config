@@ -29,6 +29,11 @@
     [ { device = "/dev/disk/by-uuid/ec7a6275-d11b-47fb-9fa1-162014fd44b9"; }
     ];
 
+  fileSystems."/mnt/windows" =
+    { device = "/dev/disk/by-uuid/428023D88023D169";
+      fsType = "ntfs-3g";
+    };
+
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction

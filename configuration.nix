@@ -15,6 +15,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.initrd.kernelModules = [ "nvidia" ];
+  boot.supportedFilesystems = [ "ntfs" ];
 
   networking.hostName = "celestial"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -47,10 +48,7 @@
   # Configure keymap in X11
   services.xserver = {
     videoDrivers = [ "nvidia" ];
-    xkb = {
-      layout = "us";
-      variant = "";
-    };
+    xkb.layout = "us";
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -121,7 +119,6 @@
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
 
-  # replace hyprland with cage once cage-kiosk/issues#264 gets resolved
   services.greetd = {
     enable = true;
     settings = {
@@ -175,19 +172,10 @@
       enable = true;
       driSupport = true;
       driSupport32Bit = true;
-      extraPackages = with pkgs; [
-        vaapiVdpau
-        libvdpau-va-gl 
-      ];
-      extraPackages32 = with pkgs.pkgsi686Linux; [ libva ];
       setLdLibraryPath = true;
     };
     nvidia = {
       modesetting.enable = true;
-      open = false;
-      nvidiaSettings = true;
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
-      forceFullCompositionPipeline = true;
       powerManagement.enable = true;
     };
   };
