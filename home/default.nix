@@ -30,51 +30,6 @@
       font-awesome
     ];
 
-    file = let
-      dotfiles = builtins.fetchGit "/home/celestial/dotfiles";
-      configPath = ".config";
-    in {
-      "${configPath}/neofetch/" = {
-        source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/neofetch";
-        recursive = true;
-      };
-
-      "${configPath}/btop/" = {
-        source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/btop";
-        recursive = true;
-      };
-
-      "${configPath}/hypr/" = {
-        source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/hypr";
-        recursive = true;
-      };
-
-      "${configPath}/kitty/" = {
-        source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/kitty";
-        recursive = true;
-      };
-
-      "${configPath}/mako/" = {
-        source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/mako";
-        recursive = true;
-      };
-
-      "${configPath}/waybar/" = {
-        source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/waybar";
-        recursive = true;
-      };
-
-      "${configPath}/wofi/" = {
-        source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/wofi";
-       recursive = true;
-      };
-
-      "${configPath}/wlogout/" = {
-        source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/wlogout";
-        recursive = true;
-      };
-    };
-
     sessionVariables = {
       BROWSER = "org.mozilla.firefox";
       EDITOR = "com.visualstudio.code";

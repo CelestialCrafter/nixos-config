@@ -12,7 +12,7 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${config.programs.hyprland.package}/bin/Hyprland --config ~/.config/hypr/hyprland.conf";
+        command = "dbus-run-session ${config.programs.hyprland.package}/bin/Hyprland --config ~/.config/hypr/hyprland.conf";
         user = "celestial";
       };
     };
