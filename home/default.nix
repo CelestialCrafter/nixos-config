@@ -92,6 +92,7 @@
       "io.github.flattool.Warehouse"
       "com.github.tchx84.Flatseal"
       "org.gnome.FileRoller"
+      "io.github.celluloid_player.Celluloid"
     ];
   };
 
