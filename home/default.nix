@@ -25,6 +25,7 @@
       swww
       libnotify
       playerctl
+      pywal
 
       noto-fonts
       noto-fonts-color-emoji
