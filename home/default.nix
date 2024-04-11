@@ -25,7 +25,6 @@
       swww
       libnotify
       playerctl
-      gnome3.nautilus
 
       noto-fonts
       noto-fonts-color-emoji
@@ -71,8 +70,6 @@
     enableCompletion = true;
     bashrcExtra = ''eval "$(zoxide init bash)"'';
   };
-
-  services.gvfs.enable = true;
 
   services.flatpak = {
     enable = true;

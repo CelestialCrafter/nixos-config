@@ -5,6 +5,7 @@
     systemPackages = with pkgs; [
       vim
       kitty
+      gnome.nautilus
 
       wget
       aria2
@@ -32,5 +33,6 @@
     };
   };
 
+  services.gvfs.enable = true;
   services.flatpak.enable = true;
 }
