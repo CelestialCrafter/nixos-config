@@ -7,6 +7,7 @@
 
   environment.systemPackages = with pkgs; [ cachix ];
 
+  documentation.doc.enable = false;
   nixpkgs.config.allowUnfree = true;
   nix = {
     settings = {
