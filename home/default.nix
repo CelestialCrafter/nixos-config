@@ -12,6 +12,7 @@
 
     packages = with pkgs; [
       inputs.hyprlock
+      hyprpicker
       neofetch
       kitty
       btop
@@ -24,6 +25,7 @@
       swww
       libnotify
       playerctl
+      gnome3.nautilus
 
       noto-fonts
       noto-fonts-color-emoji
@@ -34,6 +36,13 @@
       BROWSER = "org.mozilla.firefox";
       EDITOR = "com.visualstudio.code";
       CURRENT_VOLUME_MAX = 1.5;
+    };
+
+    pointerCursor = {
+      gtk.enable = true;
+      package = pkgs.gnome.adwaita-icon-theme;
+      name = "Adwaita";
+      size = 16;
     };
   };
 
@@ -62,6 +71,8 @@
     enableCompletion = true;
     bashrcExtra = ''eval "$(zoxide init bash)"'';
   };
+
+  services.gvfs.enable = true;
 
   services.flatpak = {
     enable = true;
