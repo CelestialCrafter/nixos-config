@@ -31,4 +31,6 @@
       EDITOR = "vim";
     };
   };
+
+  services.flatpak.enable = true;
 }
