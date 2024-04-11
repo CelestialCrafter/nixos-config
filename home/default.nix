@@ -47,6 +47,14 @@
     };
   };
 
+  xdg.userDirs = {
+    enable = true;
+    desktop = null;
+    templates = null;
+    publicShare = null;
+    createDirectories = true;
+  };
+
   programs.hyprlock.enable = true;
 
   programs.bash = {
