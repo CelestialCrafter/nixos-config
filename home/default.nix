@@ -68,7 +68,10 @@
   programs.bash = {
     enable = true;
     enableCompletion = true;
-    bashrcExtra = ''eval "$(zoxide init bash)"'';
+    bashrcExtra = ''
+      eval "$(zoxide init bash)"
+      cat /home/celestial/.cache/wal/sequence	
+    '';
   };
 
   services.flatpak = {
