@@ -26,6 +26,7 @@
       libnotify
       playerctl
       pywal
+      gnome.gnome-calendar
 
       noto-fonts
       noto-fonts-color-emoji
@@ -92,7 +93,6 @@
       "com.github.tchx84.Flatseal"
       "org.gnome.FileRoller"
       "io.github.celluloid_player.Celluloid"
-      "org.gnome.Calendar"
     ];
   };
 

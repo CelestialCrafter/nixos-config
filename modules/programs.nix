@@ -34,7 +34,11 @@
       EDITOR = "vim";
     };
   };
-
+  programs.dconf.enable = true;
+  services.gnome.evolution-data-server.enable = true;
+  services.gnome.gnome-online-accounts.enable = true;
+  services.gnome.gnome-keyring.enable = true;
+  services.gnome.sushi.enable = true;
   services.gvfs.enable = true;
   services.flatpak.enable = true;
 }
