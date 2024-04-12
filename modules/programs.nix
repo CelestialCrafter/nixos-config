@@ -6,6 +6,7 @@
       vim
       kitty
       gnome.nautilus
+      polkit_gnome
 
       wget
       aria2
@@ -23,6 +24,7 @@
       which
       killall
       ffmpeg
+      python3
 
       pciutils
       usbutils

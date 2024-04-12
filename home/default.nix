@@ -12,6 +12,7 @@
 
     packages = with pkgs; [
       inputs.hyprlock
+      config.programs.hyprlock.package
       hyprpicker
       neofetch
       kitty
@@ -26,6 +27,8 @@
       libnotify
       playerctl
       pywal
+      mpd
+      mpdris2
 
       noto-fonts
       noto-fonts-color-emoji
@@ -63,8 +66,6 @@
     publicShare = null;
     createDirectories = true;
   };
-
-  programs.hyprlock.enable = true;
 
   programs.bash = {
     enable = true;
