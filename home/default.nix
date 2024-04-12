@@ -20,15 +20,12 @@
       wofi
       waybar
       mako
-      wlogout
       grim
       slurp
       swww
       libnotify
       playerctl
       pywal
-      mpd
-      mpdris2
 
       noto-fonts
       noto-fonts-color-emoji
@@ -95,6 +92,7 @@
       "com.github.tchx84.Flatseal"
       "org.gnome.FileRoller"
       "io.github.celluloid_player.Celluloid"
+      "org.gnome.Calendar"
     ];
   };
 
