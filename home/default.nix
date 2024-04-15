@@ -6,6 +6,8 @@
     inputs.nix-flatpak.homeManagerModules.nix-flatpak
   ];
 
+  nixpkgs.config.allowUnfree = true;
+
   home = {
     username = "celestial";
     homeDirectory = "/home/celestial";
@@ -27,6 +29,7 @@
       playerctl
       pywal
       gnome.gnome-calendar
+      spicetify-cli
 
       noto-fonts
       noto-fonts-color-emoji
@@ -70,7 +73,7 @@
     enableCompletion = true;
     bashrcExtra = ''
       eval "$(zoxide init bash)"
-      cat /home/celestial/.cache/wal/sequence	
+      cat /home/celestial/.cache/wal/sequences
     '';
   };
 
@@ -84,8 +87,8 @@
     ];
     packages = [
       "org.mozilla.firefox"
-      "dev.vencord.Vesktop"
       "com.spotify.Client"
+      "dev.vencord.Vesktop"
       "org.videolan.VLC"
       "org.gimp.GIMP"
       "org.kde.krita"

@@ -8,7 +8,7 @@
   environment.systemPackages = with pkgs; [ cachix ];
 
   documentation.doc.enable = false;
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfree = true;  
   nix = {
     settings = {
       auto-optimise-store = true;
