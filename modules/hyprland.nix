@@ -8,10 +8,6 @@
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
 
-  wayland.windowManager.hyprland.plugins = [
-    inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
-  ];
-
   services.greetd = {
     enable = true;
     settings = {

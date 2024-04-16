@@ -7,8 +7,8 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     hyprland.url = "github:hyprwm/Hyprland";
     hyprlock.url = "github:hyprwm/hyprlock";
-    Hyprspace = {
-      url = "github:KZDKM:Hyprspace";
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
   };
