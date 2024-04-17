@@ -31,8 +31,9 @@
     ];
 
   fileSystems."/mnt/windows" =
-    { device = "/dev/disk/by-uuid/428023D88023D169";
+    { device = "/dev/disk/by-uuid/7E605CCF605C8FAF";
       fsType = "ntfs-3g";
+      options = [ "defaults" "nofail" "norecover" "ro" ];
     };
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
