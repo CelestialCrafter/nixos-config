@@ -99,6 +99,8 @@
       "com.github.tchx84.Flatseal"
       "org.gnome.FileRoller"
       "io.github.celluloid_player.Celluloid"
+      "org.gnome.baobab"
+      "com.system76.Popsicle"
     ];
   };
 
