@@ -34,11 +34,35 @@
       EDITOR = "vim";
     };
   };
-  programs.dconf.enable = true;
-  services.gnome.evolution-data-server.enable = true;
-  services.gnome.gnome-online-accounts.enable = true;
-  services.gnome.gnome-keyring.enable = true;
-  services.gnome.sushi.enable = true;
-  services.gvfs.enable = true;
-  services.flatpak.enable = true;
+
+  programs = {
+    dconf.enable = true;
+    git = {
+      enable = true;
+      config = {
+        diff = {
+          tool = "kitty";
+          guitool = "kitty.gui";
+        };
+        difftool = {
+          prompt = false;
+          trustExitCode = true;
+          kitty.cmd = "kitten diff $LOCAL $REMOTE";
+          kitty.gui.cmd = "kitten diff $LOCAL $REMOTE";
+        };
+      };
+    };
+  };
+
+  services = {
+    gnome = {
+      evolution-data-server.enable = true;
+      gnome-online-accounts.enable = true;
+      gnome-keyring.enable = true;
+      sushi.enable = true;
+    };
+
+    gvfs.enable = true;
+    flatpak.enable = true;
+  };
 }

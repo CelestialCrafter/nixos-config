@@ -19,6 +19,7 @@
       neofetch
       kitty
       btop
+      nvtop-nvidia
       wofi
       waybar
       mako
@@ -30,6 +31,7 @@
       pywal
       gnome.gnome-calendar
       spicetify-cli
+      neovim
 
       noto-fonts
       noto-fonts-color-emoji
@@ -38,7 +40,7 @@
 
     sessionVariables = {
       BROWSER = "org.mozilla.firefox";
-      EDITOR = "com.visualstudio.code";
+      EDITOR = "vim";
       CURRENT_VOLUME_MAX = 1.5;
     };
 
@@ -74,6 +76,15 @@
     bashrcExtra = ''
       eval "$(zoxide init bash)"
       cat /home/celestial/.cache/wal/sequences
+      alias vim='neovim'
+      alias top='btop'
+      alias please='sudo $(fc -ln 1)'
+      
+      function ps1_git_branch() {
+        BRANCH=$(git branch 2> /dev/null | grep "*" | colrm 1 2)
+        [[ ! -z $BRANCH ]] && echo "($BRANCH) "
+      }
+      PS1='\[\e[94m\]$(ps1_git_branch)\[\e[95m\]\u \W \[\e[0m\]\[\e[5 q\]'
     '';
   };
 
