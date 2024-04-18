@@ -76,7 +76,7 @@
     bashrcExtra = ''
       eval "$(zoxide init bash)"
       cat /home/celestial/.cache/wal/sequences
-      alias vim='neovim'
+      alias vim='nvim'
       alias top='btop'
       alias please='sudo $(fc -ln 1)'
       
