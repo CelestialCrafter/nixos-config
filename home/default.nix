@@ -19,7 +19,7 @@
       neofetch
       kitty
       btop
-      nvtop-nvidia
+      nvtopPackages.nvidia
       wofi
       waybar
       mako
@@ -74,6 +74,8 @@
     enable = true;
     enableCompletion = true;
     bashrcExtra = ''
+      shopt -s dotglob
+
       eval "$(zoxide init bash)"
       cat /home/celestial/.cache/wal/sequences
       alias vim='nvim'
