@@ -25,6 +25,7 @@
       killall
       ffmpeg
       python3
+      ydotool
 
       pciutils
       usbutils
