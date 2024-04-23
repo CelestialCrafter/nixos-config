@@ -2,14 +2,12 @@
 
 {
   environment = {
-    systemPackages = let
-      kitty-bitmap = pkgs.callPackage ./kitty-bitmap {};
-    in with pkgs; [
+    systemPackages = with pkgs; [
       vim
       
       gnome.nautilus
       polkit_gnome
-      kitty-bitmap
+      kitty
 
       wget
       aria2
