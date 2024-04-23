@@ -14,5 +14,6 @@
     ./sound.nix
     ./users.nix
     ./xdg.nix
+    ./fonts.nix
   ];
 }

@@ -17,7 +17,6 @@
       config.programs.hyprlock.package
       hyprpicker
       neofetch
-      kitty
       btop
       nvtopPackages.nvidia
       wofi
@@ -32,10 +31,6 @@
       gnome.gnome-calendar
       spicetify-cli
       neovim
-
-      noto-fonts
-      noto-fonts-color-emoji
-      font-awesome
     ];
 
     sessionVariables = {
@@ -56,6 +51,14 @@
 
   gtk = {
     enable = true;
+    iconTheme = {
+      package = pkgs.rose-pine-icon-theme;
+      name = "Rose Pine Icons";
+    };
+#    font = {
+#      package = import ./apple-fonts.nix;
+#      name = "SF Mono";
+#    };
     theme = {
       package = pkgs.gnome.gnome-themes-extra;
       name = "Adwaita-dark";
@@ -81,7 +84,7 @@
       alias vim='nvim'
       alias top='btop'
       alias please='sudo $(fc -ln 1)'
-      
+ 
       function ps1_git_branch() {
         BRANCH=$(git branch 2> /dev/null | grep "*" | colrm 1 2)
         [[ ! -z $BRANCH ]] && echo "($BRANCH) "
