@@ -41,9 +41,9 @@
 
     pointerCursor = {
       gtk.enable = true;
-      package = pkgs.gnome.adwaita-icon-theme;
-      name = "Adwaita";
-      size = 16;
+      package = pkgs.callPackage ./rose-pine-cursor {};
+      name = "rose-pine-cursor";
+      size = 24;
     };
   };
 
@@ -53,12 +53,8 @@
     enable = true;
     iconTheme = {
       package = pkgs.rose-pine-icon-theme;
-      name = "Rose Pine Icons";
+      name = "rose-pine";
     };
-#    font = {
-#      package = import ./apple-fonts.nix;
-#      name = "SF Mono";
-#    };
     theme = {
       package = pkgs.gnome.gnome-themes-extra;
       name = "Adwaita-dark";
