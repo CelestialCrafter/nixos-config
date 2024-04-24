@@ -117,6 +117,7 @@
       "io.github.celluloid_player.Celluloid"
       "org.gnome.baobab"
       "com.system76.Popsicle"
+      "org.pulseaudio.pavucontrol"
     ];
   };
 
