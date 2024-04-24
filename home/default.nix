@@ -12,12 +12,15 @@
     username = "celestial";
     homeDirectory = "/home/celestial";
 
-    packages = with pkgs; [
+    packages = let
+      neofetch-patched = pkgs.callPackage ./neofetch {};
+    in with pkgs; [
       inputs.hyprlock
       config.programs.hyprlock.package
       hyprpicker
-      neofetch
+      neofetch-patched
       btop
+      cava
       nvtopPackages.nvidia
       wofi
       waybar

@@ -1,0 +1,37 @@
+diff --git a/neofetch b/neofetch
+index 48b96d21..21f0198b 100755
+--- a/neofetch
++++ b/neofetch
+@@ -4883,7 +4883,11 @@ dynamic_prompt() {
+     ((lines=lines>info_height?lines-info_height+1:1))
+ 
+     printf -v nlines "%${lines}s"
+-    printf "%b" "${nlines// /\\n}"
++    if [[ $special == "on" ]]; then
++        printf "%b" "${nlines// /}"
++    else
++        printf "%b" "${nlines// /\\n}"
++    fi
+ }
+ 
+ cache_uname() {
+@@ -5369,6 +5373,7 @@ get_args() {
+ 
+             # Image options
+             "--loop") image_loop="on" ;;
++            "--special") special="on" ;;
+             "--image_size" | "--size") image_size="$2" ;;
+             "--catimg_size") catimg_size="$2" ;;
+             "--crop_mode") crop_mode="$2" ;;
+@@ -11580,6 +11585,11 @@ main() {
+ 
+     [[ $verbose == on ]] && printf '%b\033[m' "$err" >&2
+ 
++    # If `--special` was used, sleep indefinitely
++    while [[ $special == on ]]; do
++        sleep infinity
++    done
++
+     # If `--loop` was used, constantly redraw the image.
+     while [[ $image_loop == on && $image_backend == w3m ]]; do
+         display_image
