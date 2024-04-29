@@ -27,6 +27,7 @@
       ffmpeg
       python3
       ydotool
+      devenv
 
       pciutils
       usbutils

@@ -30,10 +30,10 @@
       swww
       libnotify
       playerctl
-      pywal
       gnome.gnome-calendar
       spicetify-cli
       neovim
+      pywal
     ];
 
     sessionVariables = {
