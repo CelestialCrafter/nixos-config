@@ -117,6 +117,8 @@
       "org.gnome.baobab"
       "com.system76.Popsicle"
       "org.pulseaudio.pavucontrol"
+      "md.obsidian.Obsidian"
+      "io.github.ungoogled_software.ungoogled_chromium"
     ];
   };
 
