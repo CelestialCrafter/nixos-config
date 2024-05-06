@@ -15,7 +15,6 @@
     packages = let
       neofetch-patched = pkgs.callPackage ./neofetch {};
     in with pkgs; [
-      inputs.hyprlock
       config.programs.hyprlock.package
       hyprpicker
       neofetch-patched
@@ -23,7 +22,7 @@
       cava
       nvtopPackages.nvidia
       wofi
-      waybar
+      inputs.waybar.packages.${pkgs.system}.waybar
       mako
       grim
       slurp

@@ -7,6 +7,7 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     hyprland.url = "github:hyprwm/Hyprland";
     hyprlock.url = "github:hyprwm/hyprlock";
+    waybar.url = "github:Alexays/Waybar";
   };
 
   outputs = inputs@{ nixpkgs, home-manager, ... }: {
