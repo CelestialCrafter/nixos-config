@@ -3,13 +3,12 @@
 {
   environment = {
     systemPackages = with pkgs; [
-      vim
-      
       gnome.nautilus
       polkit_gnome
       kitty
 
       wget
+      vim
       aria2
       git
       gh
@@ -27,7 +26,6 @@
       ffmpeg
       python3
       ydotool
-      atuin
 
       pciutils
       usbutils

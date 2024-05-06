@@ -37,8 +37,9 @@
 
     sessionVariables = {
       BROWSER = "org.mozilla.firefox";
-      EDITOR = "vim";
-      CURRENT_VOLUME_MAX = 1.5;
+      EDITOR = "nvim";
+      CURRENT_VOLUME_MAX = 1.7;
+      FLATPAK_ENABLE_SDK_EXT="golang";
     };
 
     pointerCursor = {
@@ -117,7 +118,6 @@
       "com.system76.Popsicle"
       "org.pulseaudio.pavucontrol"
       "md.obsidian.Obsidian"
-      "io.github.ungoogled_software.ungoogled_chromium"
     ];
   };
 
