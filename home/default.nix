@@ -33,6 +33,8 @@
       spicetify-cli
       neovim
       pywal
+      cbonsai
+      zathura
     ];
 
     sessionVariables = {
