@@ -34,7 +34,6 @@
       neovim
       pywal
       cbonsai
-      zathura
     ];
 
     sessionVariables = {
