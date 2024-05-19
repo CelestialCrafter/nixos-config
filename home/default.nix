@@ -22,6 +22,7 @@
       cava
       nvtopPackages.nvidia
       wofi
+      onagre
       inputs.waybar.packages.${pkgs.system}.waybar
       mako
       grim
@@ -119,6 +120,8 @@
       "com.system76.Popsicle"
       "org.pulseaudio.pavucontrol"
       "md.obsidian.Obsidian"
+      "org.gnome.clocks"
+      "com.github.johnfactotum.Foliate"
     ];
   };
 
