@@ -26,6 +26,7 @@
       ffmpeg
       python3
       ydotool
+      stow
 
       pciutils
       usbutils

@@ -22,7 +22,6 @@
       cava
       nvtopPackages.nvidia
       wofi
-      onagre
       inputs.waybar.packages.${pkgs.system}.waybar
       mako
       grim
