@@ -121,6 +121,7 @@
       "md.obsidian.Obsidian"
       "org.gnome.clocks"
       "com.github.johnfactotum.Foliate"
+      "one.ablaze.floorp"
     ];
   };
 

@@ -1,7 +1,10 @@
 {
   networking = {
     hostName = "celestial";
-    networkmanager.enable = true;
+    networkmanager = {
+      enable = true;
+      wifi.scanRandMacAddress = false;
+    };
     nameservers = [ "1.1.1.1" "1.0.0.1" ];
 
     firewall = {
