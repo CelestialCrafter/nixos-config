@@ -37,7 +37,7 @@
     ];
 
     sessionVariables = {
-      BROWSER = "org.mozilla.firefox";
+      BROWSER = "one.ablaze.floorp";
       EDITOR = "nvim";
       CURRENT_VOLUME_MAX = 1.7;
       FLATPAK_ENABLE_SDK_EXT="golang";

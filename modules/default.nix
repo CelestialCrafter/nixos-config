@@ -15,5 +15,6 @@
     ./users.nix
     ./xdg.nix
     ./fonts.nix
+    ./docker.nix
   ];
 }
