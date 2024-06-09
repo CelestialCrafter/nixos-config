@@ -1,18 +1,12 @@
 { pkgs, inputs, config, ... }:
 
 {
-  security.pam.services.hyprlock = {};
-
-  programs.hyprland = {
-    enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-  };
-
+  programs.river.enable = true;
   services.greetd = {
-    enable = true;
+    enable = false;
     settings = {
       default_session = {
-        command = "dbus-run-session ${config.programs.hyprland.package}/bin/Hyprland";
+        command = "dbus-run-session ${pkgs.river}/bin/river";
         user = "celestial";
       };
     };
@@ -25,8 +19,6 @@
 
       qt5.qtwayland
       qt6.qtwayland
-
-      hyprland-protocols
     ];
 
     # magic variables that I totally understand
@@ -36,7 +28,6 @@
       XDG_SESSION_TYPE = "wayland";
       NIXOS_OZONE_WL = "1";
       WLR_NO_HARDWARE_CURSORS = "1";
-      WLR_RENDERER = "vulkan";
       LIBVA_DRIVER_NAME = "nvidia";
       SDL_VIDEODRIVER = "wayland";
       CLUTTER_BACKEND = "wayland";

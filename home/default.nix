@@ -2,7 +2,6 @@
 
 {
   imports = [
-    inputs.hyprlock.homeManagerModules.hyprlock
     inputs.nix-flatpak.homeManagerModules.nix-flatpak
   ];
 
@@ -15,8 +14,6 @@
     packages = let
       neofetch-patched = pkgs.callPackage ./neofetch {};
     in with pkgs; [
-      config.programs.hyprlock.package
-      hyprpicker
       neofetch-patched
       btop
       cava
