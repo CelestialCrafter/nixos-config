@@ -3,7 +3,7 @@
 {
   programs.river.enable = true;
   services.greetd = {
-    enable = false;
+    enable = true;
     settings = {
       default_session = {
         command = "dbus-run-session ${pkgs.river}/bin/river";
@@ -24,6 +24,7 @@
     # magic variables that I totally understand
     # sorted (kinda) by least arcane to most arcane
     sessionVariables = {
+      XDG_CURRENT_DESKTOP="river";
       MOZ_ENABLE_WAYLAND = "1";
       XDG_SESSION_TYPE = "wayland";
       NIXOS_OZONE_WL = "1";

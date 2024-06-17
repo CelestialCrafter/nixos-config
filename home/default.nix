@@ -13,24 +13,29 @@
 
     packages = let
       neofetch-patched = pkgs.callPackage ./neofetch {};
+      wideriver = pkgs.callPackage ./wideriver {};
+      ristate = pkgs.callPackage ./ristate {};
     in with pkgs; [
       neofetch-patched
       btop
       cava
       nvtopPackages.nvidia
-      wofi
-      inputs.waybar.packages.${pkgs.system}.waybar
-      mako
+      fuzzel
+      yambar
+      fnott
       grim
       slurp
       swww
       libnotify
       playerctl
-      gnome.gnome-calendar
+      pamixer
       spicetify-cli
       neovim
-      pywal
       cbonsai
+      wideriver
+      ristate
+      imagemagick
+      qimgv
     ];
 
     sessionVariables = {
@@ -54,7 +59,7 @@
     enable = true;
     iconTheme = {
       package = pkgs.rose-pine-icon-theme;
-      name = "rose-pine";
+      name = "rose-pine-dawn";
     };
     theme = {
       package = pkgs.gnome.gnome-themes-extra;
@@ -71,23 +76,7 @@
   };
 
   programs.bash = {
-    enable = true;
     enableCompletion = true;
-    bashrcExtra = ''
-      shopt -s dotglob
-
-      eval "$(zoxide init bash)"
-      cat /home/celestial/.cache/wal/sequences
-      alias vim='nvim'
-      alias top='btop'
-      alias please='sudo $(fc -ln 1)'
- 
-      function ps1_git_branch() {
-        BRANCH=$(git branch 2> /dev/null | grep "*" | colrm 1 2)
-        [[ ! -z $BRANCH ]] && echo "($BRANCH) "
-      }
-      PS1='\[\e[94m\]$(ps1_git_branch)\[\e[95m\]\u \W \[\e[0m\]\[\e[5 q\]'
-    '';
   };
 
   services.flatpak = {
@@ -99,7 +88,6 @@
       }
     ];
     packages = [
-      "org.mozilla.firefox"
       "com.spotify.Client"
       "dev.vencord.Vesktop"
       "org.videolan.VLC"

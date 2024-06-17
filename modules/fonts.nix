@@ -7,5 +7,7 @@
       noto-fonts
       noto-fonts-cjk
       noto-fonts-emoji
+      (pkgs.callPackage ./azuki {})
+      (pkgs.callPackage ./azuki/bold.nix {})
   ];
 }

@@ -3,9 +3,8 @@
 {
   environment = {
     systemPackages = with pkgs; [
-      gnome.nautilus
       polkit_gnome
-      kitty
+      foot
 
       wget
       vim
@@ -25,7 +24,6 @@
       killall
       ffmpeg
       python3
-      ydotool
       stow
 
       pciutils
@@ -39,21 +37,7 @@
 
   programs = {
     dconf.enable = true;
-    git = {
-      enable = true;
-      config = {
-        diff = {
-          tool = "kitty";
-          guitool = "kitty.gui";
-        };
-        difftool = {
-          prompt = false;
-          trustExitCode = true;
-          kitty.cmd = "kitten diff $LOCAL $REMOTE";
-          kitty.gui.cmd = "kitten diff $LOCAL $REMOTE";
-        };
-      };
-    };
+    git.enable = true;
   };
 
   services = {

@@ -9,8 +9,8 @@ stdenvNoCC.mkDerivation rec {
   version = "1.1.0";
 
   src = fetchurl {
-    url = "https://github.com/rose-pine/cursor/releases/download/v1.1.0/BreezeX-RosePine-Linux.tar.xz";
-    sha256 = "sha256-szDVnOjg5GAgn2OKl853K3jZ5rVsz2PIpQ6dlBKJoa8=";
+    url = "https://github.com/rose-pine/cursor/releases/download/v1.1.0/BreezeX-RosePineDawn-Linux.tar.xz";
+    sha256 = "sha256-hanfwx9ooT1TbmcgCr63KVYwC1OIzTwjmxzi4Zjcrdg=";
   };
 
   nativeBuildInputs = [
