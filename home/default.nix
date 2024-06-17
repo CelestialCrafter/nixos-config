@@ -34,6 +34,7 @@
       cbonsai
       wideriver
       ristate
+      swaylock
       imagemagick
       qimgv
       gcc
