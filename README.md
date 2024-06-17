@@ -1,4 +1,4 @@
 # nixos-config
 
-my nixos configs!
+my nixos configs!<br>
 dotfiles in https://github.com/CelestialCrafter/dotfiles
