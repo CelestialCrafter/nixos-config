@@ -36,6 +36,7 @@
       ristate
       imagemagick
       qimgv
+      gcc
     ];
 
     sessionVariables = {
