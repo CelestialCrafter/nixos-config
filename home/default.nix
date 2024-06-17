@@ -37,6 +37,7 @@
       imagemagick
       qimgv
       gcc
+      lazygit
     ];
 
     sessionVariables = {
