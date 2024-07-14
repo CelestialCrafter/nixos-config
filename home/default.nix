@@ -15,6 +15,7 @@
       neofetch-patched = pkgs.callPackage ./neofetch {};
       wideriver = pkgs.callPackage ./wideriver {};
       ristate = pkgs.callPackage ./ristate {};
+      nixvim-config = inputs.nixvim-config.packages.${pkgs.system}.default;
     in with pkgs; [
       neofetch-patched
       btop
@@ -30,15 +31,13 @@
       playerctl
       pamixer
       spicetify-cli
-      neovim
       cbonsai
       wideriver
       ristate
       swaylock
       imagemagick
       qimgv
-      gcc
-      lazygit
+      nixvim-config
     ];
 
     sessionVariables = {
@@ -65,7 +64,7 @@
       name = "rose-pine-dawn";
     };
     theme = {
-      package = pkgs.gnome.gnome-themes-extra;
+      package = pkgs.gnome-themes-extra;
       name = "Adwaita-dark";
     };
   };
@@ -108,7 +107,6 @@
       "org.pulseaudio.pavucontrol"
       "md.obsidian.Obsidian"
       "org.gnome.clocks"
-      "com.github.johnfactotum.Foliate"
       "one.ablaze.floorp"
     ];
   };

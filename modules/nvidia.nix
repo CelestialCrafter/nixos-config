@@ -1,11 +1,6 @@
 {
   hardware = {
-    opengl = {
-      enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
-      setLdLibraryPath = true;
-    };
+    graphics.enable = true;
 
     nvidia = {
       nvidiaSettings = false;
