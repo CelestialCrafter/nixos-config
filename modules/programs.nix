@@ -10,6 +10,7 @@
       vim
       aria2
       git
+      git-lfs
       gh
       zip
       unzip
