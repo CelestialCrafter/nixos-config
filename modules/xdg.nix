@@ -5,15 +5,13 @@
   xdg = {
     autostart.enable = true;
     portal = {
-      enable = true;
-      extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
-      wlr = {
-        enable = true;
-        settings.screencast = {
-          chooser_type = "dmenu";
-          chooser_cmd = "${pkgs.fuzzel}/bin/fuzzel -d";
-        };
+      config = {
+        common.default = "*";
+        qtile.default = ["wlr" "gtk"];
       };
+      enable = true;
+      extraPortals = with pkgs; [ xdg-desktop-portal-gtk xdg-desktop-portal-wlr ];
+      wlr.enable = true;
     };
   };
 

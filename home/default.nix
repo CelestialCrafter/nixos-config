@@ -12,30 +12,17 @@
     homeDirectory = "/home/celestial";
 
     packages = let
-      neofetch-patched = pkgs.callPackage ./neofetch {};
-      wideriver = pkgs.callPackage ./wideriver {};
-      ristate = pkgs.callPackage ./ristate {};
       nixvim-config = inputs.nixvim-config.packages.${pkgs.system}.default;
     in with pkgs; [
-      neofetch-patched
       btop
-      cava
       nvtopPackages.nvidia
-      fuzzel
-      yambar
-      fnott
       grim
       slurp
-      swww
       libnotify
       playerctl
       pamixer
       spicetify-cli
       cbonsai
-      wideriver
-      ristate
-      swaylock
-      imagemagick
       qimgv
       nixvim-config
     ];
@@ -43,15 +30,6 @@
     sessionVariables = {
       BROWSER = "one.ablaze.floorp";
       EDITOR = "nvim";
-      CURRENT_VOLUME_MAX = 1.7;
-      FLATPAK_ENABLE_SDK_EXT="golang";
-    };
-
-    pointerCursor = {
-      gtk.enable = true;
-      package = pkgs.callPackage ./rose-pine-cursor {};
-      name = "rose-pine-cursor";
-      size = 24;
     };
   };
 
@@ -59,10 +37,6 @@
 
   gtk = {
     enable = true;
-    iconTheme = {
-      package = pkgs.rose-pine-icon-theme;
-      name = "rose-pine-dawn";
-    };
     theme = {
       package = pkgs.gnome-themes-extra;
       name = "Adwaita-dark";
@@ -98,15 +72,11 @@
       "org.blender.Blender"
       "com.obsproject.Studio"
       "com.visualstudio.code"
-      "io.github.flattool.Warehouse"
-      "com.github.tchx84.Flatseal"
       "org.gnome.FileRoller"
-      "io.github.celluloid_player.Celluloid"
       "org.gnome.baobab"
       "com.system76.Popsicle"
       "org.pulseaudio.pavucontrol"
       "md.obsidian.Obsidian"
-      "org.gnome.clocks"
       "one.ablaze.floorp"
     ];
   };

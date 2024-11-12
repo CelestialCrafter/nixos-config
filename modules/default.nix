@@ -6,7 +6,7 @@
     ./polkit.nix
     ./rtkit.nix
     ./time-locale.nix
-    ./river.nix
+    ./qtile.nix
     ./networking.nix
     ./nvidia.nix
     ./printing.nix

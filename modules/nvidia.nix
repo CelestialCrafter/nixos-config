@@ -3,6 +3,7 @@
     graphics.enable = true;
 
     nvidia = {
+      open = true;
       nvidiaSettings = false;
       modesetting.enable = true;
       powerManagement.enable = true;
