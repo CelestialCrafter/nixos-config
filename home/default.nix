@@ -25,6 +25,7 @@
       cbonsai
       qimgv
       nixvim-config
+      jujutsu
     ];
 
     sessionVariables = {
