@@ -16,8 +16,9 @@
     in with pkgs; [
       btop
       nvtopPackages.nvidia
-      grim
-      slurp
+      maim
+      hilbish
+      alacritty
       libnotify
       playerctl
       pamixer
@@ -50,10 +51,6 @@
     templates = null;
     publicShare = null;
     createDirectories = true;
-  };
-
-  programs.bash = {
-    enableCompletion = true;
   };
 
   services.flatpak = {
