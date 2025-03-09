@@ -5,6 +5,7 @@
     celestial = {
       isNormalUser = true;
       description = "Celestial";
+      shell = pkgs.fish;
       extraGroups = [ "networkmanager" "wheel" ];
     };
   };

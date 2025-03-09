@@ -6,10 +6,9 @@
     ./polkit.nix
     ./rtkit.nix
     ./time-locale.nix
-    ./awesome.nix
+    ./river.nix
     ./networking.nix
     ./nvidia.nix
-    ./printing.nix
     ./programs.nix
     ./sound.nix
     ./users.nix

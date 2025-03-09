@@ -6,10 +6,9 @@
       open = true;
       nvidiaSettings = false;
       modesetting.enable = true;
-      powerManagement.enable = true;
     };
   };
 
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = ["nvidia"];
   boot.initrd.kernelModules = [ "nvidia" ];
 }

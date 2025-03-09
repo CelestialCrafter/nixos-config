@@ -3,6 +3,7 @@
 {
   imports = [
     inputs.nix-flatpak.homeManagerModules.nix-flatpak
+    ./neovim.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -11,27 +12,49 @@
     username = "celestial";
     homeDirectory = "/home/celestial";
 
-    packages = let
-      nixvim-config = inputs.nixvim-config.packages.${pkgs.system}.default;
-    in with pkgs; [
-      btop
-      nvtopPackages.nvidia
-      maim
-      hilbish
-      alacritty
-      libnotify
+    packages = with pkgs; [
+      # river
+      wideriver
+      yambar
+      kanshi
+      fuzzel
+      fnott
+      grim
+      slurp
+      swww
       playerctl
       pamixer
+
+      gimp
+      krita
+      blender
+      obs-studio
+      obsidian
+      mpv
+      qimgv
+      blender
+
+      zoxide
+      tldr
+      stow
+      btop
+      nvtopPackages.nvidia
+      libnotify
       spicetify-cli
       cbonsai
-      qimgv
-      nixvim-config
+      yazi
+      ueberzugpp
       jujutsu
+      difftastic
+      mergiraf
+      lua54Packages.lua
     ];
 
-    sessionVariables = {
-      BROWSER = "one.ablaze.floorp";
-      EDITOR = "nvim";
+    pointerCursor = {
+      gtk.enable = true;
+      package = pkgs.rose-pine-cursor;
+      name = "rose-pine-cursor";
+      size = 24;
     };
   };
 
@@ -39,6 +62,10 @@
 
   gtk = {
     enable = true;
+    iconTheme = {
+      package = pkgs.rose-pine-icon-theme;
+      name = "rose-pine-dawn";
+    };
     theme = {
       package = pkgs.gnome-themes-extra;
       name = "Adwaita-dark";
@@ -63,19 +90,8 @@
     ];
     packages = [
       "com.spotify.Client"
-      "dev.vencord.Vesktop"
-      "org.videolan.VLC"
-      "org.gimp.GIMP"
-      "org.kde.krita"
-      "org.blender.Blender"
-      "com.obsproject.Studio"
-      "com.visualstudio.code"
-      "org.gnome.FileRoller"
-      "org.gnome.baobab"
-      "com.system76.Popsicle"
-      "org.pulseaudio.pavucontrol"
-      "md.obsidian.Obsidian"
       "one.ablaze.floorp"
+      "dev.vencord.Vesktop"
     ];
   };
 

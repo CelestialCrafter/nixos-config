@@ -3,10 +3,11 @@
 {
   fonts.fontDir.enable = true;
   fonts.packages = with pkgs; [
-      (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+      nerd-fonts.symbols-only
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-emoji
-      work-sans
+      (pkgs.callPackage ./azuki {})
+      (pkgs.callPackage ./azuki/bold.nix {})
   ];
 }

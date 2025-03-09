@@ -1,23 +1,20 @@
 { pkgs, ... }:
 
 {
-  imports = [
-    ../cachix.nix
-  ];
-
-  environment.systemPackages = with pkgs; [ cachix ];
-
   documentation.doc.enable = false;
   nixpkgs.config.allowUnfree = true;  
   nix = {
     settings = {
       auto-optimise-store = true;
       experimental-features = [ "nix-command" "flakes" ];
+
+      substituters = [ "https://cuda-maintainers.cachix.org/" ];
+      trusted-public-keys = [ "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E=" ];
     };
 
     gc = {
       automatic = true;
-      dates = "weekly";
+      dates = "daily";
       options = "--delete-older-than 7d";
     };
   };
