@@ -1,17 +1,15 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, machine, ... }:
 
 {
-  users.users = {
-    celestial = {
-      isNormalUser = true;
-      description = "Celestial";
+  users.users.celestial = {
+    isNormalUser = true;
       shell = pkgs.fish;
       extraGroups = [ "networkmanager" "wheel" ];
-    };
   };
 
   home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    users."celestial" = import ../home;
+    extraSpecialArgs = { inherit machine inputs; };
+    useGlobalPkgs = true;
+    users.celestial = import ./home;
   };
 }

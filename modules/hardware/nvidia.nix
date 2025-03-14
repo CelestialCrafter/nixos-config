@@ -1,6 +1,7 @@
 {
   hardware = {
     graphics.enable = true;
+    container-toolkit.enable = true;
 
     nvidia = {
       open = true;
@@ -9,6 +10,5 @@
     };
   };
 
-  services.xserver.videoDrivers = ["nvidia"];
-  boot.initrd.kernelModules = [ "nvidia" ];
+  services.xserver.videoDrivers = [ "nvidia" ];
 }

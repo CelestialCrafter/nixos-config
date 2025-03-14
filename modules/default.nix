@@ -1,19 +1,17 @@
+{ inputs, lib, ... }:
+
 {
   imports = [
-    ../hardware-configuration.nix
     ./boot.nix
     ./nix-settings.nix
-    ./polkit.nix
-    ./rtkit.nix
-    ./time-locale.nix
-    ./river.nix
     ./networking.nix
-    ./nvidia.nix
     ./programs.nix
     ./sound.nix
     ./users.nix
-    ./xdg.nix
     ./fonts.nix
-    ./docker.nix
+    ./desktop.nix
+	./misc.nix
+    ./hardware
+    inputs.home-manager.nixosModules.default
   ];
 }
