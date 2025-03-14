@@ -1,0 +1,5 @@
+{ machine, ... }:
+
+{
+  imports = [ (./. + "/${machine}.nix") ];
+}

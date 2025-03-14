@@ -4,12 +4,12 @@
   programs.neovim = {
     enable = true;
     extraPackages = with pkgs; [
-      zig # treesitter
+      clang # treesitter
       ruff # lsp/fmt
   
       # lsp
       lua-language-server
-      rust-analyzer cargo
+      rust-analyzer cargo rustc
       gopls
       typescript-language-server
       marksman

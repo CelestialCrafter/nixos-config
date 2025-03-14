@@ -4,19 +4,17 @@
 { config, lib, pkgs, modulesPath, inputs, ... }:
 
 {
-  imports =
-    [
-	(modulesPath + "/installer/scan/not-detected.nix")
-        inputs.nixos-hardware.nixosModules.gigabyte-b550
-    ];
+  imports = [
+    (modulesPath + "/installer/scan/not-detected.nix")
+    inputs.nixos-hardware.nixosModules.gigabyte-b550
+    ./nvidia.nix
+  ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" "v4l2loopback" ];
   boot.extraModulePackages = [ ];
   boot.supportedFilesystems = [ "ntfs"  ];
-
-  hardware.nvidia.modesetting.enable = true;
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/73f9a8b6-4e19-4322-a2b1-3c2e1f430388";
