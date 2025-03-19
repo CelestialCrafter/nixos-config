@@ -4,9 +4,7 @@
   environment.systemPackages = with pkgs; [
     zip unzip
     ripgrep jq fzf fd
-    which
-    killall
-    pciutils
+    which killall pciutils
   ];
 
   programs.vim = {
