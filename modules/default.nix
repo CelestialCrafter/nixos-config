@@ -10,6 +10,7 @@
     ./users.nix
     ./fonts.nix
     ./desktop.nix
+	./keyd.nix
 	./misc.nix
     ./hardware
     inputs.home-manager.nixosModules.default

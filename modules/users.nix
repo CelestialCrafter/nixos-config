@@ -4,7 +4,7 @@
   users.users.celestial = {
     isNormalUser = true;
       shell = pkgs.fish;
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = [ "networkmanager" "wheel" "keyd" ];
   };
 
   home-manager = {

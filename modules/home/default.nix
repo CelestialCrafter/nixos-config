@@ -28,6 +28,9 @@
       size = 24;
     };
 
+    # throws up and dies
+	file.".XCompose".source = "${pkgs.keyd}/share/keyd/keyd.compose";
+
     stateVersion = "24.11";
   };
 
