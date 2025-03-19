@@ -1,14 +1,8 @@
 #!/usr/bin/env fish
 
 # args
-argparse a/action=? s/system=? -- $argv
+argparse s/system=? -- $argv
 or return
-
-if set -q _flag_action
-	set action _flag_action
-else
-	set action switch
-end
 
 if set -q _flag_system
 	set system $_flag_system
@@ -24,11 +18,12 @@ if test (math (date +%s) - (stat --format %Y flake.lock)) -gt (math "7 * 24 * 60
 end
 
 # building
-set -l tmp (mktemp -t -d nixos-custom-rebuild.XXXXXX)
+set -l tmp (mktemp -d -t nixos-custom-rebuild.XXXXXX)
 set -l output "$tmp/result"
 
 nix build ".#nixosConfigurations.$system.config.system.build.toplevel" --out-link $output
-and $output/bin/switch-to-configuration $action
+and $output/bin/switch-to-configuration switch
+and nix-env --profile /nix/var/nix/profiles/system --set $output
 
 # cleanup
 rm -rf $tmp
