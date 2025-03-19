@@ -3,6 +3,9 @@
 {
   programs.neovim = {
     enable = true;
+	defaultEditor = true;
+	vimAlias = true;
+
     extraPackages = with pkgs; [
       clang # treesitter
       ruff # lsp/fmt

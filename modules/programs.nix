@@ -13,6 +13,7 @@
     enable = true;
     defaultEditor = true;
   };
+
   programs.git.enable = true;
   programs.fish.enable = true;
   services.flatpak.enable = true;
