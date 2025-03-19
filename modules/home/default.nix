@@ -8,7 +8,6 @@
       gimp
       blender
       obs-studio
-      obsidian
       mpv
       qimgv
       blender
