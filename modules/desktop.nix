@@ -1,4 +1,10 @@
-{ pkgs, inputs, config, lib, ... }:
+{
+  pkgs,
+  inputs,
+  config,
+  lib,
+  ...
+}:
 
 {
   services.greetd = {
@@ -12,13 +18,16 @@
   programs.river = {
     enable = true;
     extraPackages = with pkgs; [
-      foot swaylock
+      foot
+      swaylock
       wideriver
       yambar
       kanshi
       fuzzel
-      libnotify fnott
-      grim slurp
+      libnotify
+      fnott
+      grim
+      slurp
       swww
       wl-clipboard
       lua54Packages.lua
@@ -28,7 +37,7 @@
   xdg.portal.enable = true;
 
   environment.sessionVariables = {
-    XDG_CURRENT_DESKTOP="river";
+    XDG_CURRENT_DESKTOP = "river";
     MOZ_ENABLE_WAYLAND = "1";
   };
 }

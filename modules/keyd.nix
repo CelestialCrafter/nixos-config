@@ -6,7 +6,7 @@
     keyboards.bocchi = {
       ids = [ "534b:5431:f85c548c" ];
       settings = {
-	    global.default_layout = "colemak";
+        global.default_layout = "colemak";
 
         main = {
           capslock = "overload(navigation, esc)";
@@ -38,9 +38,9 @@
           i = "に";
           o = "ら";
           p = "せ";
-		  leftbrace = "゛";
-		  rightbrace = "゜";
-		  backslash = "む";
+          leftbrace = "゛";
+          rightbrace = "゜";
+          backslash = "む";
 
           a = "ち";
           s = "と";
@@ -65,25 +65,25 @@
           dot = "る";
           slash = "め";
 
-		  shift = "layer(hiragana_shift)";
+          shift = "layer(hiragana_shift)";
         };
 
-		"hiragana_shift:S" = {
-		  "3" = "ぁ";
-		  "4" = "ゥ";
-		  "5" = "ぇ";
-		  "6" = "ぉ";
-		  "7" = "ゃ";
-		  "8" = "ゅ";
-		  "9" = "ょ";
-		  "0" = "ゎ";
+        "hiragana_shift:S" = {
+          "3" = "ぁ";
+          "4" = "ゥ";
+          "5" = "ぇ";
+          "6" = "ぉ";
+          "7" = "ゃ";
+          "8" = "ゅ";
+          "9" = "ょ";
+          "0" = "ゎ";
 
-		  e = "ぃ";
-		  leftbrace = "「";
-		  rightbrace = "」";
+          e = "ぃ";
+          leftbrace = "「";
+          rightbrace = "」";
 
-		  z = "っ";
-		};
+          z = "っ";
+        };
 
         # for some reason, include layouts/colemak just didnt work
         "colemak:layout" = {
@@ -120,7 +120,7 @@
         };
       };
 
-	  extraConfig = "include layouts/colemak";
+      extraConfig = "include layouts/colemak";
     };
   };
 }
