@@ -1,4 +1,9 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   imports = [ ./neovim.nix ];
@@ -12,13 +17,20 @@
       qimgv
       blender
 
-     spicetify-cli
-      alsa-utils playerctl
+      spicetify-cli
+      alsa-utils
+      playerctl
       stow
       cbonsai
-      zoxide tldr btop ffmpeg
-      yazi ueberzugpp
-      jujutsu difftastic mergiraf
+      zoxide
+      tldr
+      btop
+      ffmpeg
+      yazi
+      ueberzugpp
+      jujutsu
+      difftastic
+      mergiraf
     ];
 
     pointerCursor = {
@@ -32,9 +44,9 @@
 
   xdg = {
     mimeApps = {
-	  enable = true;
-	  defaultApplications."x-scheme-handler/https" = "one.ablaze.floorp.desktop";
-	};
+      enable = true;
+      defaultApplications."x-scheme-handler/https" = "one.ablaze.floorp.desktop";
+    };
 
     userDirs = {
       enable = true;

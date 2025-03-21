@@ -1,15 +1,20 @@
 { pkgs, ... }:
 
 {
-  nixpkgs.config.allowUnfree = true;  
+  nixpkgs.config.allowUnfree = true;
 
   nix = {
     settings = {
       auto-optimise-store = true;
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
 
       trusted-substituters = [ "https://cuda-maintainers.cachix.org/" ];
-      trusted-public-keys = [ "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E=" ];
+      trusted-public-keys = [
+        "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
+      ];
     };
 
     optimise.automatic = true;

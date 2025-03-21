@@ -2,9 +2,15 @@
 
 {
   environment.systemPackages = with pkgs; [
-    zip unzip
-    ripgrep jq fzf fd
-    which killall pciutils
+    zip
+    unzip
+    ripgrep
+    jq
+    fzf
+    fd
+    which
+    killall
+    pciutils
   ];
 
   programs.vim = {

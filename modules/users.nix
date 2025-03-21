@@ -1,10 +1,18 @@
-{ pkgs, inputs, machine, ... }:
+{
+  pkgs,
+  inputs,
+  machine,
+  ...
+}:
 
 {
   users.users.celestial = {
     isNormalUser = true;
-      shell = pkgs.fish;
-      extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.fish;
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
   };
 
   home-manager = {
