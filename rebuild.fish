@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
 
 # args
-argparse s/system=? -- $argv
+argparse 's/system=?' -- $argv
 or return
 
 if set -q _flag_system

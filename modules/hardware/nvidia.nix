@@ -1,7 +1,7 @@
 {
   hardware = {
     graphics.enable = true;
-    container-toolkit.enable = true;
+    nvidia-container-toolkit.enable = true;
 
     nvidia = {
       open = true;
