@@ -11,7 +11,7 @@
   };
 
   outputs = inputs@{ nixpkgs, home-manager, nixos-hardware, ... }: {
-    nixosConfigurations = nixpkgs.lib.genAttrs [ "celestial-main" "celestial-laptop" ] (machine: nixpkgs.lib.nixosSystem {
+    nixosConfigurations = nixpkgs.lib.genAttrs [ "celestial-pc" "celestial-laptop" ] (machine: nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [ ./modules ];
       specialArgs = { inherit machine inputs; };
