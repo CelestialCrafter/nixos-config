@@ -4,7 +4,10 @@
 }:
 
 {
-  imports = [ ./neovim.nix ];
+  imports = [
+    ./neovim.nix
+    ./jj.nix
+  ];
 
   home = {
     packages = with pkgs; [
@@ -30,9 +33,6 @@
       ffmpeg
       yazi
       ueberzugpp
-      jujutsu
-      difftastic
-      mergiraf
     ];
 
     pointerCursor = {
