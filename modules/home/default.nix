@@ -1,5 +1,7 @@
 {
   pkgs,
+  inputs,
+  system,
   ...
 }:
 
@@ -17,6 +19,7 @@
       mpv
       qimgv
       blender
+	  deluge
       floorp
       (vesktop.override {
         withSystemVencord = true;
@@ -31,8 +34,15 @@
       tldr
       btop
       ffmpeg
+
       yazi
       ueberzugpp
+
+      rmpc
+      mpd-mpris
+	  picard
+	  puddletag
+      inputs.lyricizer.packages.${system}.default
     ];
 
     pointerCursor = {

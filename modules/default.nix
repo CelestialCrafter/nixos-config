@@ -1,4 +1,4 @@
-{ inputs, lib, ... }:
+{ inputs, ... }:
 
 {
   imports = [
@@ -6,7 +6,7 @@
     ./nix-settings.nix
     ./networking.nix
     ./programs.nix
-    ./sound.nix
+    ./audio.nix
     ./users.nix
     ./fonts.nix
     ./desktop.nix

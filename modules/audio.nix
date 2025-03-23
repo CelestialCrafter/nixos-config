@@ -1,10 +1,33 @@
+{ config, ... }:
+
 {
+  services.mpd = {
+    enable = true;
+    user = "celestial";
+    extraConfig = ''
+      audio_output {
+        type "pipewire"
+        name "PipeWire Output"
+      }
+    '';
+  };
+
+  systemd.services.mpd.environment.XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.celestial.uid}";
+
+  services.mpdscribble = {
+    enable = true;
+    endpoints."last.fm" = {
+      passwordFile = config.services.mpd.dataDir + "/lastfm-password";
+      username = "celestialexe";
+    };
+  };
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     pulse.enable = true;
 
-    # oratory1990's settings for the ath m50x
+    # equalizer based on oratory1990's settings for the ath m50x
     extraConfig.pipewire."99-equalizer" = {
       "context.modules" = [
         {
