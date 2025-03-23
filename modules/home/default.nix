@@ -1,7 +1,5 @@
 {
-  config,
   pkgs,
-  inputs,
   ...
 }:
 
@@ -16,6 +14,10 @@
       mpv
       qimgv
       blender
+      floorp
+      (vesktop.override {
+        withSystemVencord = true;
+      })
 
       spicetify-cli
       alsa-utils
