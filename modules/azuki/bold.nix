@@ -10,7 +10,7 @@ stdenvNoCC.mkDerivation rec {
 
   src = fetchzip {
     url = "http://azukifont.com/font/azukifontB120.zip";
-    sha256 = "sha256-mw2dgvzAX9k2vEmuHtH3enAl3Zs7aLdUcWEczdaaxrw=";
+    sha256 = "sha256-pqlsqVuKcI1K/TowEd1qxNH/P5QoLrhvJNrUDHuX5ms=";
   };
 
   installPhase = ''
