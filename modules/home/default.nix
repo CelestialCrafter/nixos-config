@@ -19,7 +19,7 @@
       mpv
       qimgv
       blender
-	  deluge
+      deluge
       floorp
       (vesktop.override {
         withSystemVencord = true;
@@ -40,9 +40,10 @@
 
       rmpc
       mpd-mpris
-	  picard
-	  puddletag
-      inputs.lyricizer.packages.${system}.default
+      picard
+      puddletag
+      inputs.tools.packages.${system}.lyricizer
+      inputs.tools.packages.${system}.fetch
     ];
 
     pointerCursor = {
@@ -57,7 +58,10 @@
   xdg = {
     mimeApps = {
       enable = true;
-      defaultApplications."x-scheme-handler/https" = "one.ablaze.floorp.desktop";
+      defaultApplications = {
+        "x-scheme-handler/https" = "one.ablaze.floorp.desktop";
+        "x-scheme-handler/http" = "one.ablaze.floorp.desktop";
+      };
     };
 
     userDirs = {
