@@ -12,7 +12,8 @@
     '';
   };
 
-  systemd.services.mpd.environment.XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.celestial.uid}";
+  systemd.services.mpd.environment.XDG_RUNTIME_DIR =
+    "/run/user/${toString config.users.users.celestial.uid}";
 
   services.mpdscribble = {
     enable = true;

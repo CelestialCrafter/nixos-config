@@ -1,17 +1,24 @@
-{ inputs, ... }:
+{ config, name, ... }:
 
 {
   imports = [
+    (./hardware + "/${name}.nix")
+    (
+      {
+        "celestial-pc-linux" = ./desktop;
+        "celestial-laptop" = ./desktop;
+      }
+      .${name}
+    )
     ./boot.nix
-    ./nix-settings.nix
+	./users.nix
     ./networking.nix
-    ./programs.nix
-    ./audio.nix
-    ./users.nix
-    ./fonts.nix
-    ./desktop.nix
- 	./misc.nix
-    ./hardware
-    inputs.home-manager.nixosModules.default
+    ./nix-settings.nix
+    ./misc.nix
   ];
+
+  networking.hostName = name;
+
+  # :3
+  system.stateVersion = config.system.nixos.release;
 }

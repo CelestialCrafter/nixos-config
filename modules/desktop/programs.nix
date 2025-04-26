@@ -10,7 +10,8 @@
     fd
     which
     killall
-    usbutils pciutils
+    usbutils
+    pciutils
   ];
 
   programs.vim = {
