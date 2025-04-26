@@ -1,17 +1,11 @@
 {
   time.timeZone = "America/Chicago";
 
-  virtualisation.docker = {
+  virtualisation.containers.enable = true;
+  virtualisation.podman = {
     enable = true;
     autoPrune.enable = true;
-    rootless = {
-      enable = true;
-      setSocketVariable = true;
-    };
   };
 
-  security = {
-    rtkit.enable = true;
-    polkit.enable = true;
-  };
+  security.rtkit.enable = true;
 }

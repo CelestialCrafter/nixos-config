@@ -1,17 +1,20 @@
-{ inputs, ... }:
+{
+  config,
+  name,
+  ...
+}:
 
 {
   imports = [
-    ./boot.nix
-    ./nix-settings.nix
-    ./networking.nix
-    ./programs.nix
-    ./audio.nix
-    ./users.nix
-    ./fonts.nix
-    ./desktop.nix
- 	./misc.nix
-    ./hardware
-    inputs.home-manager.nixosModules.default
+    (./. + "/hardware/${name}.nix")
+	./boot.nix
+	./nix-settings.nix
+	./users.nix
+	./networking.nix
+	./misc.nix
+    ./desktop
   ];
+
+  # nyehehehe
+  system.stateVersion = config.system.nixos.release;
 }

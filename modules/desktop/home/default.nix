@@ -1,7 +1,7 @@
 {
   pkgs,
   inputs,
-  system,
+  platform,
   ...
 }:
 
@@ -42,8 +42,8 @@
       mpd-mpris
       picard
       puddletag
-      inputs.tools.packages.${system}.lyricizer
-      inputs.tools.packages.${system}.fetch
+      inputs.tools.packages.${platform}.lyricizer
+      inputs.tools.packages.${platform}.fetch
     ];
 
     pointerCursor = {

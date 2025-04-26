@@ -3,13 +3,13 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixos-hardware.url = "github:NixOS/nixos-hardware";
     tools = {
-      url = "github:CelestialCrafter/tools/master";
+      url = "github:CelestialCrafter/tools";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
-      url = "github:nix-community/home-manager/master";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -21,16 +21,19 @@
       nixos-hardware,
       ...
     }:
-    let
-	  system = "x86_64-linux";
-	in {
-      nixosConfigurations = nixpkgs.lib.genAttrs [ "celestial-pc" "celestial-laptop" ] (
-        machine:
-        nixpkgs.lib.nixosSystem {
-          inherit system;
-          modules = [ ./modules ];
-          specialArgs = { inherit machine inputs system; };
-        }
-      );
+    {
+      nixosConfigurations =
+        nixpkgs.lib.genAttrs
+          [
+            "celestial-pc-linux"
+            "celestial-laptop"
+          ]
+          (
+            name:
+            nixpkgs.lib.nixosSystem {
+              modules = [ ./modules ];
+              specialArgs = { inherit name inputs; };
+            }
+          );
     };
 }
