@@ -21,7 +21,7 @@ end
 set -l tmp (mktemp -d -t nixos-custom-rebuild.XXXXXX)
 set -l output "$tmp/result"
 
-nix build ".#nixosConfigurations.$system.config.system.build.toplevel" --out-link $output
+nix build ".#nixosConfigurations.$system.config.system.build.toplevel" --out-link $output --extra-experimental-features nix-command --extra-experimental-features flakes
 and $output/bin/switch-to-configuration switch
 and nix-env --profile /nix/var/nix/profiles/system --set $output
 

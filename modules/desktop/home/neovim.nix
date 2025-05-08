@@ -20,6 +20,7 @@
       typescript-language-server
       marksman
       vscode-langservers-extracted
+	  zls
 
       # fmt
       stylua
@@ -30,6 +31,7 @@
       mdformat
       prettierd
       stylelint
+	  zig # zigfmt
     ];
   };
 }

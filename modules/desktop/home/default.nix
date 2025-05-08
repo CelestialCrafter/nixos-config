@@ -19,9 +19,10 @@
       blender
       deluge
       floorp
-      (vesktop.override {
-        withSystemVencord = true;
-      })
+	  vesktop
+      # (vesktop.override {
+      #   withSystemVencord = true;
+      # })
 
       spicetify-cli
       alsa-utils
