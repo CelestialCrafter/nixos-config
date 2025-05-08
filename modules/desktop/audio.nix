@@ -1,28 +1,6 @@
 { config, ... }:
 
 {
-  services.mpd = {
-    enable = true;
-    user = "celestial";
-    extraConfig = ''
-      audio_output {
-        type "pipewire"
-        name "PipeWire Output"
-      }
-    '';
-  };
-
-  systemd.services.mpd.environment.XDG_RUNTIME_DIR =
-    "/run/user/${toString config.users.users.celestial.uid}";
-
-  services.mpdscribble = {
-    enable = true;
-    endpoints."last.fm" = {
-      passwordFile = config.services.mpd.dataDir + "/lastfm-password";
-      username = "celestialexe";
-    };
-  };
-
   services.pipewire = {
     enable = true;
     alsa.enable = true;
