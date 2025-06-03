@@ -3,22 +3,13 @@
 {
   imports = [
     (./hardware + "/${name}.nix")
-    (
-      {
-        "celestial-pc-linux" = ./desktop;
-        "celestial-laptop" = ./desktop;
-      }
-      .${name}
-    )
-    ./boot.nix
-	./users.nix
+	./desktop
     ./networking.nix
     ./nix-settings.nix
     ./misc.nix
+    ./programs.nix
   ];
 
   networking.hostName = name;
-
-  # :3
   system.stateVersion = config.system.nixos.release;
 }

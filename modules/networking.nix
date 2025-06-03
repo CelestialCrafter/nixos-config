@@ -5,7 +5,6 @@
       "1.0.0.1"
     ];
 
-    networkmanager.enable = true;
     firewall.enable = true;
     nftables.enable = true;
   };
@@ -14,6 +13,4 @@
     enable = true;
     useRoutingFeatures = "client";
   };
-
-  systemd.services.NetworkManager-wait-online.enable = false;
 }

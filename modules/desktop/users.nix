@@ -1,12 +1,9 @@
-{
-  inputs,
-  ...
-}:
+{ pkgs, ... }:
 
 {
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    useGlobalPkgs = true;
-    users.celestial = import ./home;
+  users.users.celestial = {
+    isNormalUser = true;
+    shell = pkgs.fish;
+    extraGroups = [ "wheel" "networkmanager" ];
   };
 }
