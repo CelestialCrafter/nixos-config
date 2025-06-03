@@ -6,19 +6,17 @@
     (
       {
         "celestial-pc-linux" = ./desktop;
+        "celestial-homelab" = ./server;
         "celestial-laptop" = ./desktop;
       }
       .${name}
     )
-    ./boot.nix
-	./users.nix
     ./networking.nix
     ./nix-settings.nix
     ./misc.nix
+    ./programs.nix
   ];
 
   networking.hostName = name;
-
-  # :3
   system.stateVersion = config.system.nixos.release;
 }

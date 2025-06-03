@@ -4,8 +4,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware";
-    tools = {
-      url = "github:CelestialCrafter/tools";
+    celestials-closet = {
+      url = "github:CelestialCrafter/celestials-closet";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
@@ -26,6 +26,7 @@
         nixpkgs.lib.genAttrs
           [
             "celestial-pc-linux"
+            "celestial-homelab"
             "celestial-laptop"
           ]
           (

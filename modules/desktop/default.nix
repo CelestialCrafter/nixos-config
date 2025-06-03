@@ -5,9 +5,9 @@
     ./audio.nix
     ./environment.nix
     ./fonts.nix
-    ./programs.nix
     ./users.nix
     ./misc.nix
+	./boot.nix
     inputs.home-manager.nixosModules.default
   ];
 }

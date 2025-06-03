@@ -12,17 +12,12 @@
   home = {
     packages = with pkgs; [
       gimp
-      blender
       obs-studio
       mpv
       qimgv
-      blender
       deluge
       floorp
 	  vesktop
-      # (vesktop.override {
-      #   withSystemVencord = true;
-      # })
 
       spicetify-cli
       alsa-utils
@@ -38,7 +33,6 @@
       ueberzugpp
 
       rmpc
-      mpd-mpris
       picard
       puddletag
     ];
@@ -48,8 +42,6 @@
       name = "rose-pine-cursor";
       size = 24;
     };
-
-    stateVersion = "24.11";
   };
 
   xdg = {

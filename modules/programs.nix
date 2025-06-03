@@ -1,17 +1,12 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
     zip
-    unzip
     ripgrep
     jq
-    fzf
     fd
-    which
-    killall
-    usbutils
-    pciutils
+    busybox
   ];
 
   programs.vim = {
@@ -20,6 +15,4 @@
   };
 
   programs.git.enable = true;
-  programs.fish.enable = true;
-  services.flatpak.enable = true;
 }
