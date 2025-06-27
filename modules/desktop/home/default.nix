@@ -1,23 +1,24 @@
 {
   pkgs,
+  config,
   ...
 }:
 
 {
   imports = [
-    ./neovim.nix
-    ./jj.nix
+    ./helix.nix
+    ./jujutsu.nix
   ];
 
   home = {
     packages = with pkgs; [
-      gimp
+      gimp3
       obs-studio
       mpv
       qimgv
       deluge
       floorp
-	  vesktop
+      vesktop
 
       spicetify-cli
       alsa-utils
@@ -28,6 +29,7 @@
       tldr
       btop
       ffmpeg
+      babelfish
 
       yazi
       ueberzugpp
@@ -35,6 +37,8 @@
       rmpc
       picard
       puddletag
+
+      lua
     ];
 
     pointerCursor = {
@@ -42,6 +46,8 @@
       name = "rose-pine-cursor";
       size = 24;
     };
+
+    stateVersion = config.home.version.release;
   };
 
   xdg = {

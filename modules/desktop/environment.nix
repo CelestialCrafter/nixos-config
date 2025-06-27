@@ -1,10 +1,4 @@
-{
-  pkgs,
-  inputs,
-  config,
-  lib,
-  ...
-}:
+{ pkgs, ... }:
 
 {
   services.greetd = {
@@ -30,7 +24,6 @@
       slurp
       swww
       wl-clipboard
-      lua54Packages.lua
     ];
   };
 

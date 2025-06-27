@@ -1,11 +1,15 @@
 {
-  description = "Celestial's NixOS Configuration";
+  description = "cels nix config";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware";
     home-manager = {
       url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    helix = {
+      url = "github:helix-editor/helix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -25,10 +29,10 @@
             "celestial-laptop"
           ]
           (
-            name:
+            machine:
             nixpkgs.lib.nixosSystem {
               modules = [ ./modules ];
-              specialArgs = { inherit name inputs; };
+              specialArgs = { inherit machine inputs; };
             }
           );
     };

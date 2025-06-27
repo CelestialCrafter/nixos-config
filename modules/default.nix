@@ -1,15 +1,15 @@
-{ config, name, ... }:
+{ config, machine, ... }:
 
 {
   imports = [
-    (./hardware + "/${name}.nix")
-	./desktop
+    (./hardware + "/${machine}.nix")
+    ./desktop
     ./networking.nix
     ./nix-settings.nix
     ./misc.nix
     ./programs.nix
   ];
 
-  networking.hostName = name;
+  networking.hostName = machine;
   system.stateVersion = config.system.nixos.release;
 }
