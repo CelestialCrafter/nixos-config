@@ -30,6 +30,7 @@
       btop
       ffmpeg
       babelfish
+      nix-your-shell
 
       yazi
       ueberzugpp
