@@ -37,8 +37,6 @@
       rmpc
       picard
       puddletag
-
-      lua
     ];
 
     pointerCursor = {

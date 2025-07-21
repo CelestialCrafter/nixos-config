@@ -24,6 +24,7 @@
       slurp
       swww
       wl-clipboard
+      lua54Packages.lua
     ];
   };
 
