@@ -17,7 +17,7 @@
       mpv
       qimgv
       deluge
-      floorp
+      firefox
       vesktop
 
       spicetify-cli
@@ -53,8 +53,8 @@
     mimeApps = {
       enable = true;
       defaultApplications = {
-        "x-scheme-handler/https" = "one.ablaze.floorp.desktop";
-        "x-scheme-handler/http" = "one.ablaze.floorp.desktop";
+        "x-scheme-handler/https" = "firefox";
+        "x-scheme-handler/http" = "firefox";
       };
     };
 
