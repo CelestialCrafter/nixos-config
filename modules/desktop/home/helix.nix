@@ -7,6 +7,7 @@
     package = inputs.helix.packages.${pkgs.system}.default;
 
     extraPackages = with pkgs; [
+      lldb # debugger
       ruff # python
       stylua lua-language-server # lua
       rust-analyzer rustfmt rustc cargo # rust
