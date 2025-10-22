@@ -4,12 +4,12 @@
   services.greetd = {
     enable = true;
     settings.default_session = {
-      command = "dbus-run-session ${pkgs.river}/bin/river";
+      command = "dbus-run-session ${pkgs.river-classic}/bin/river";
       user = "celestial";
     };
   };
 
-  programs.river = {
+  programs.river-classic = {
     enable = true;
     extraPackages = with pkgs; [
       foot
