@@ -1,7 +1,6 @@
 {
   hardware = {
     graphics.enable = true;
-    nvidia-container-toolkit.enable = true;
 
     nvidia = {
       open = true;

@@ -11,9 +11,9 @@
       ruff # python
       tinymist typstyle # typst
       stylua lua-language-server # lua
-      rust-analyzer rustfmt rustc cargo # rust
+      rust-analyzer rustfmt rustc cargo clippy # rust
       gopls golangci-lint golangci-lint-langserver go # go
-      nil nixfmt-rfc-style # nix
+      nil nixfmt # nix
       typescript-language-server # javascript
       nodePackages.prettier # javascript, html, css, scss, json, svelte
       marksman mdformat # marksman
