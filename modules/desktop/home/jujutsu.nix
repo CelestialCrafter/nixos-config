@@ -7,7 +7,6 @@
 
     settings = {
       working-copy.eol-conversion = "input";
-      git.push-new-bookmarks = true;
 
       revset-aliases = {
         "closest_bookmark(to)" = "heads(::to & bookmarks())";
