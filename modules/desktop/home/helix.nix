@@ -9,6 +9,7 @@
     extraPackages = with pkgs; [
       lldb # debugger
       ruff # python
+      tinymist typstyle # typst
       stylua lua-language-server # lua
       rust-analyzer rustfmt rustc cargo # rust
       gopls golangci-lint golangci-lint-langserver go # go
