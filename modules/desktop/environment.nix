@@ -37,5 +37,6 @@ in
   environment.sessionVariables = {
     XDG_CURRENT_DESKTOP = "river";
     MOZ_ENABLE_WAYLAND = "1";
+    _JAVA_AWT_WM_NONREPARENTING = "1";
   };
 }
