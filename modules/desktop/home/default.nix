@@ -15,6 +15,7 @@
     packages = with pkgs; [
       gimp3
       obs-studio
+      libreoffice
       mpv
       qimgv
       deluge
