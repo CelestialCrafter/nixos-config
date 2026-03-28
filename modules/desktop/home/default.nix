@@ -20,7 +20,7 @@
       qimgv
       deluge
       firefox
-      vesktop
+      inputs.nixpkgs-stable.legacyPackages.x86_64-linux.vesktop
 
       spicetify-cli
       alsa-utils
