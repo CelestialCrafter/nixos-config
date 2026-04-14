@@ -26,7 +26,7 @@ in
       fnott
       grim
       slurp
-      swww
+      awww
       wl-clipboard
       lua54Packages.lua
     ];
