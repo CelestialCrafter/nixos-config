@@ -14,11 +14,6 @@
           "heads(::to & mutable() & ~description(exact:\"\") & (~empty() | merges()))";
       };
       aliases = {
-        drain = [
-          "restore"
-          "--changes-in"
-          "@"
-        ];
         pull = [
           "git"
           "fetch"
