@@ -1,35 +1,46 @@
 {
   config,
   lib,
+  pkgs,
   modulesPath,
+  inputs,
   ...
 }:
 
 {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
+    inputs.nixos-hardware.nixosModules.framework-intel-core-ultra-series1
   ];
 
   boot.initrd.availableKernelModules = [
-    "ahci"
     "xhci_pci"
+    "thunderbolt"
     "nvme"
+    "usb_storage"
+    "sd_mod"
   ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/62d433b7-5f70-420b-86b8-62bb98194df4";
+    device = "/dev/mapper/luks-5f7c9054-2008-4836-9f83-2917bbb16f70";
     fsType = "btrfs";
     options = [ "subvol=@" ];
   };
 
-  boot.initrd.luks.devices."luks-bac23852-d3b3-4857-966c-c5976d8abdd7".device =
-    "/dev/disk/by-uuid/bac23852-d3b3-4857-966c-c5976d8abdd7";
+  boot.initrd.luks.devices."luks-5f7c9054-2008-4836-9f83-2917bbb16f70".device =
+    "/dev/disk/by-uuid/5f7c9054-2008-4836-9f83-2917bbb16f70";
+
+  fileSystems."/home" = {
+    device = "/dev/mapper/luks-5f7c9054-2008-4836-9f83-2917bbb16f70";
+    fsType = "btrfs";
+    options = [ "subvol=@home" ];
+  };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/3E72-9440";
+    device = "/dev/disk/by-uuid/F765-31D2";
     fsType = "vfat";
     options = [
       "fmask=0077"
@@ -38,11 +49,10 @@
   };
 
   swapDevices = [
-    { device = "/dev/disk/by-uuid/055d8db3-2f56-43f4-a6c1-44675a9a610c"; }
+    { device = "/dev/disk/by-uuid/437954c5-33fe-4971-b23d-eec228f16963"; }
   ];
 
-  networking.useDHCP = lib.mkDefault true;
-
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  hardware.cpu.intel.npu.enable = true;
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
