@@ -8,6 +8,7 @@
 
     extraPackages = with pkgs; [
       lldb # debugger
+      jdt-language-server google-java-format # java
       ty ruff # python
       tinymist typstyle # typst
       stylua lua-language-server # lua
