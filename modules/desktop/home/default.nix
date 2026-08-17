@@ -1,5 +1,4 @@
 {
-  inputs,
   pkgs,
   config,
   ...
@@ -20,14 +19,15 @@
       qimgv
       deluge
       firefox
-      inputs.nixpkgs-stable.legacyPackages.x86_64-linux.vesktop
 
       spicetify-cli
       alsa-utils
       playerctl
       stow
       cbonsai
-      zoxide
+      broot
+      typst
+      hayagriva
       tldr
       btop
       ffmpeg
@@ -43,6 +43,7 @@
     ];
 
     pointerCursor = {
+      enable = true;
       package = pkgs.rose-pine-cursor;
       name = "rose-pine-cursor";
       size = 24;

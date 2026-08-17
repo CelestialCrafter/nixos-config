@@ -7,7 +7,7 @@
     ./fonts.nix
     ./users.nix
     ./misc.nix
-	./boot.nix
+    ./boot.nix
     inputs.home-manager.nixosModules.default
   ];
 }

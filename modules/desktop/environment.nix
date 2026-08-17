@@ -1,20 +1,17 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 
-let
-  river-classic = inputs.nixpkgs-stable.legacyPackages.x86_64-linux.river-classic;
-in
 {
   services.greetd = {
     enable = true;
     settings.default_session = {
-      command = "dbus-run-session ${river-classic}/bin/river";
+      command = "dbus-run-session ${pkgs.river-classic}/bin/river";
       user = "celestial";
     };
   };
 
   programs.river-classic = {
     enable = true;
-    package = river-classic;
+    package = pkgs.river-classic;
     extraPackages = with pkgs; [
       foot
       swaylock
@@ -33,6 +30,7 @@ in
   };
 
   xdg.portal.enable = true;
+  services.gvfs.enable = true;
 
   environment.sessionVariables = {
     XDG_CURRENT_DESKTOP = "river";
