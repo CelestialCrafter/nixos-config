@@ -10,6 +10,8 @@
       lldb # debugger
       jdt-language-server google-java-format # java
       ty ruff # python
+      gleam # gleam
+      erlang-language-platform beamMinimalPackages.erlfmt # erlang
       tinymist typstyle # typst
       stylua lua-language-server # lua
       rust-analyzer rustfmt rustc cargo clippy # rust
