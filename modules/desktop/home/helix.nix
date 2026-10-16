@@ -1,26 +1,91 @@
-{ pkgs, inputs, ... }:
+{
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   programs.helix = {
     enable = true;
     defaultEditor = true;
-    package = inputs.helix.packages.${pkgs.stdenv.hostPlatform.system}.default;
+    package = inputs.helix.packages.${pkgs.stdenv.hostPlatform.system}.default.override {
+      includeGrammarIf =
+        grammar:
+        builtins.elem grammar.name [
+          "rust"
+          "toml"
+          "fish"
+          "json"
+          "c"
+          "cpp"
+          "go"
+          "javascript"
+          "typescript"
+          "tsx"
+          "css"
+          "scss"
+          "html"
+          "python"
+          "nix"
+          "bash"
+          "java"
+          "lua"
+          "svelte"
+          "vue"
+          "yaml"
+          "cmake"
+          "make"
+          "comment"
+          "markdown"
+          "markdown_inline"
+          "dockerfile"
+          "diff"
+          "gitignore"
+          "erlang"
+          "gleam"
+          "xml"
+          "just"
+          "typst"
+          "jjdescription"
+          "jjrevset"
+          "jjtemplate"
+          "jq"
+          "log"
+          "csv"
+          "rust-format-args"
+        ];
+    };
 
     extraPackages = with pkgs; [
       lldb # debugger
-      jdt-language-server google-java-format # java
-      ty ruff # python
+      jdt-language-server
+      google-java-format # java
+      ty
+      ruff # python
       gleam # gleam
-      erlang-language-platform beamMinimalPackages.erlfmt # erlang
-      tinymist typstyle # typst
-      stylua lua-language-server # lua
-      rust-analyzer rustfmt rustc cargo clippy # rust
-      gopls golangci-lint golangci-lint-langserver go # go
-      nil nixfmt # nix
+      erlang-language-platform
+      beamMinimalPackages.erlfmt # erlang
+      tinymist
+      typstyle # typst
+      stylua
+      lua-language-server # lua
+      rust-analyzer
+      rustfmt
+      rustc
+      cargo
+      clippy # rust
+      gopls
+      golangci-lint
+      golangci-lint-langserver
+      go # go
+      nil
+      nixfmt # nix
       typescript-language-server # javascript
       prettier # javascript, html, css, scss, json, svelte
-      marksman mdformat # marksman
-      clang clang-tools # c
+      marksman
+      mdformat # marksman
+      clang
+      clang-tools # c
       svelte-language-server # svelte
     ];
   };
