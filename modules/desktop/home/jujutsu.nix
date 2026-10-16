@@ -1,9 +1,14 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   home.packages = [ pkgs.difftastic ];
   programs.jujutsu = {
     enable = true;
+    package = inputs.jujutsu.packages.${pkgs.stdenv.hostPlatform.system}.default;
 
     settings = {
       working-copy.eol-conversion = "input";

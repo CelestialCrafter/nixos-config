@@ -13,6 +13,10 @@
       url = "github:helix-editor/helix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    jujutsu = {
+      url = "github:jj-vcs/jj?ref=pull/9635/merge";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
